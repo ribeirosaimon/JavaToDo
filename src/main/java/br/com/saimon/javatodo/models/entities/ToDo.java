@@ -1,16 +1,14 @@
 package br.com.saimon.javatodo.models.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name = "maketodo")
 public class ToDo implements Serializable {
-    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +16,9 @@ public class ToDo implements Serializable {
     private Date datetime;
     private String homework;
     private boolean check;
+
+    public ToDo() {
+    }
 
     public ToDo(Date datetime, String homework, boolean check) {
         this.datetime = datetime;
@@ -27,10 +28,6 @@ public class ToDo implements Serializable {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public Date getDatetime() {
