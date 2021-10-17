@@ -55,6 +55,7 @@ public class ToDoService {
         WorkToDo job = findOneToDo(id);
         job.setDatetime(new Date());
         job.setCheckWork(true);
+        this.toDoRepository.save(job);
         return job;
     }
 
