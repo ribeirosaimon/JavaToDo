@@ -7,27 +7,33 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "maketodo")
-public class ToDo implements Serializable {
+public class WorkToDo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private Date datetime;
-    private String homework;
-    private boolean check;
 
-    public ToDo() {
+    @Column(nullable = false)
+    private String homework;
+    private boolean checkWork;
+
+    WorkToDo(){
+
     }
 
-    public ToDo(Date datetime, String homework, boolean check) {
+    public WorkToDo(Date datetime, String homework, boolean checkWork) {
         this.datetime = datetime;
         this.homework = homework;
-        this.check = check;
+        this.checkWork = checkWork;
     }
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Date getDatetime() {
@@ -46,24 +52,24 @@ public class ToDo implements Serializable {
         this.homework = homework;
     }
 
-    public boolean isCheck() {
-        return check;
+    public boolean isCheckWork() {
+        return checkWork;
     }
 
-    public void setCheck(boolean check) {
-        this.check = check;
+    public void setCheckWork(boolean checkWork) {
+        this.checkWork = checkWork;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ToDo)) return false;
-        ToDo toDo = (ToDo) o;
-        return getId() == toDo.getId() && isCheck() == toDo.isCheck() && Objects.equals(getDatetime(), toDo.getDatetime()) && Objects.equals(getHomework(), toDo.getHomework());
+        if (!(o instanceof WorkToDo)) return false;
+        WorkToDo work = (WorkToDo) o;
+        return getId() == work.getId() && isCheckWork() == work.isCheckWork() && Objects.equals(getDatetime(), work.getDatetime()) && Objects.equals(getHomework(), work.getHomework());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getDatetime(), getHomework(), isCheck());
+        return Objects.hash(getId(), getDatetime(), getHomework(), isCheckWork());
     }
 }
