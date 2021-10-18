@@ -1,6 +1,7 @@
 package br.com.saimon.javatodo.exceptions.handler;
 
 import br.com.saimon.javatodo.exceptions.ExceptionResponse;
+import br.com.saimon.javatodo.exceptions.InvalidJwtAuthenticationExeption;
 import br.com.saimon.javatodo.exceptions.ToDoNotCreatedException;
 import br.com.saimon.javatodo.exceptions.ToDoNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -39,5 +40,13 @@ public class CustomizedResponseEntityException extends ResponseEntityExceptionHa
                 ex.getMessage(),
                 req.getDescription(false));
         return new ResponseEntity<>(exceptionResponse, HttpStatus.CONFLICT);
+    }
+    @ExceptionHandler(InvalidJwtAuthenticationExeption.class)
+    public final ResponseEntity<ExceptionResponse> invalidJwtAuthenticationException(Exception ex, WebRequest req){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(
+                new Date(),
+                ex.getMessage(),
+                req.getDescription(false));
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 }
