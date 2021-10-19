@@ -1,4 +1,4 @@
-package br.com.saimon.javatodo.UsersConfig;
+package br.com.saimon.javatodo.usersConfig;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -15,29 +15,28 @@ public class AppUser implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     @Column(unique = true)
-    private String username;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
-    private Boolean locked;
-    private Boolean enabled;
+    private Boolean locked = false;
+    private Boolean enabled = false;
 
     public AppUser() {
 
     }
 
-    public AppUser(String name, String username, String email, String password, UserRole userRole, Boolean locked, Boolean enabled) {
-        this.name = name;
-        this.username = username;
+    public AppUser(String firstName, String lastName, String email, String password, UserRole userRole) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.userRole = userRole;
-        this.locked = locked;
-        this.enabled = enabled;
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -52,7 +51,7 @@ public class AppUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.username;
+        return this.email;
     }
 
     @Override
@@ -75,12 +74,12 @@ public class AppUser implements UserDetails {
         return this.enabled;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setEmail(String email) {
@@ -103,16 +102,19 @@ public class AppUser implements UserDetails {
         this.enabled = enabled;
     }
 
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof AppUser)) return false;
         AppUser that = (AppUser) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(getUsername(), that.getUsername()) && Objects.equals(email, that.email) && Objects.equals(getPassword(), that.getPassword()) && userRole == that.userRole && Objects.equals(locked, that.locked) && Objects.equals(isEnabled(), that.isEnabled());
+        return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(getUsername(), that.getUsername()) && Objects.equals(email, that.email) && Objects.equals(getPassword(), that.getPassword()) && userRole == that.userRole && Objects.equals(locked, that.locked) && Objects.equals(isEnabled(), that.isEnabled());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, getUsername(), email, getPassword(), userRole, locked, isEnabled());
+        return Objects.hash(id, firstName, getUsername(), email, getPassword(), userRole, locked, isEnabled());
     }
 }

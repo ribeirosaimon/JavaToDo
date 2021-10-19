@@ -1,4 +1,4 @@
-package br.com.saimon.javatodo.UsersConfig;
+package br.com.saimon.javatodo.usersConfig;
 
 public enum UserRole {
     USER,
