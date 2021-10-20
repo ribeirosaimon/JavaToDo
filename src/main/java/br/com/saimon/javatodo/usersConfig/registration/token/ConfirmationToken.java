@@ -1,20 +1,36 @@
 package br.com.saimon.javatodo.usersConfig.registration.token;
 
+import br.com.saimon.javatodo.usersConfig.AppUser;
+
+import javax.annotation.processing.Generated;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
 public class ConfirmationToken {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Column(nullable = false)
     private String token;
+    @Column(nullable = false)
     private LocalDateTime localDateTime;
+
     private LocalDateTime expiredAt;
     private LocalDateTime confirmedAt;
+    @ManyToOne
+    @JoinColumn(nullable = false, name = "app_user_id")
+    private AppUser appUser;
 
-    public ConfirmationToken(String token, LocalDateTime localDateTime, LocalDateTime expiredAt, LocalDateTime confirmedAt) {
+    public ConfirmationToken(){
+
+    }
+    public ConfirmationToken(String token, LocalDateTime localDateTime, LocalDateTime expiredAt,  AppUser appUser) {
         this.token = token;
         this.localDateTime = localDateTime;
         this.expiredAt = expiredAt;
-        this.confirmedAt = confirmedAt;
+        this.appUser = appUser;
     }
 
     public Long getId() {
@@ -55,6 +71,14 @@ public class ConfirmationToken {
 
     public void setConfirmedAt(LocalDateTime confirmedAt) {
         this.confirmedAt = confirmedAt;
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 
     @Override

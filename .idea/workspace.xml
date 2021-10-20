@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="045e544f-f265-4142-b9e0-cc3a25ede139" name="Changes" comment="Users controllers">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_5_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/security/PasswordEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/security/config/webSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/EmailValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/RegistrationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/RegistrationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/token/ConfirmationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JavaToDo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JavaToDo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/token/ConfirmationTokenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/token/ConfirmationTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/token/ConfirmationTokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/UsersConfig/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/UsersConfig/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/UsersConfig/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/UsersConfig/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/token/ConfirmationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/saimon/javatodo/usersConfig/registration/token/ConfirmationToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
